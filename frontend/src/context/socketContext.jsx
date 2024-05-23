@@ -12,7 +12,7 @@ export const useSocket=()=>{
   const user=useRecoilValue(userAtom);
   const [onlineusers, setOnlineUsers]=useState([])
   useEffect(()=>{
-       const socket=io("http://localhost:5000",{//establish a websocket connection
+       const socket=io("/",{//establish a websocket connection
         query:{
           userId:user?._id
         }
