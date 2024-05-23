@@ -10,10 +10,12 @@ import messageRoutes from './routes/messageRoutes.js'
 import cors from 'cors'
 import {v2 as cloudinary} from 'cloudinary'
 import { app, server } from './socket/socket.js';
+import job from './corn/cron.js';
 
 dotenv.config();
 
 connectDb();
+job.start();
 
 
 app.use(cors());
